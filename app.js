@@ -10,14 +10,16 @@ app.set("views", "views");
 
 const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
-const productsController = require("./controllers/error");
+const errorController = require("./controllers/error");
+// const productsRoutes = require("./routes/products");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/admin", adminRoutes);
 app.use(shopRoutes);
+// app.use(productsRoutes);
 
-app.use(productsController.pageNotFound);
+app.use(errorController.pageNotFound);
 
 app.listen(3000);
