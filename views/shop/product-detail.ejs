@@ -1,37 +1,16 @@
 <%- include('../includes/head.ejs') %>
-<link rel="stylesheet" href="/css/product.css">
     </head>
 
     <body>
         <%- include('../includes/navigation.ejs') %>
-        <main>
-                <div class="grid">
-                        <article class="card product-item">
-                            <header class="card__header">
-                                <h1 class="product__title">
-                                    <%= prod.title %>
-                                </h1>
-                            </header>
-                            <div class="card__image">
-                                <img src="<%= prod.imageUrl %>" alt="<%= prod.title %>">
-                            </div>
-                            <div class="card__content">
-                                <h2 class="product__price">$
-                                    <%= prod.price %>
-                                </h2>
-                                <p class="product__description">
-                                    <%= prod.description %>
-                                </p>
-                            </div>
-                            <div class="card__actions">
-                                <!-- <a href="/products/<%= prod.id%>" class="btn">Details</a> -->
-                                <form action="/cart" method="POST">
-                                    <button class="btn">Add to Cart</button>
-                                    <input type="hidden" name="productId" value="<%= prod.id%>">
-                                </form>
-                            </div>
-                        </article>
-                </div>
-                    <!-- <h1>No Products Found!</h1> -->
+        <main class="centered">
+            <h1><%= product.title %></h1>
+            <hr>
+            <div>
+                <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
+            </div>
+            <h2><%= product.price %></h2>
+            <p><%= product.description %></p>
+            <%- include('../includes/add-to-cart.ejs') %>
         </main>
         <%- include('../includes/end.ejs') %>
