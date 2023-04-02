@@ -53,18 +53,18 @@ mongoose
     MONGO_URI
   )
   .then(result => {
-    User.findOne().then(user => {
-      if (!user) {
-        const user = new User({
-          name: 'Emraan Iqbal',
-          email: 'emi@test.com',
-          cart: {
-            items: []
-          }
-        });
-        user.save();
-      }
-    });
+    // User.findOne().then(user => {
+    //   if (!user) {
+    //     const user = new User({
+    //       name: 'Emraan Iqbal',
+    //       email: 'emi@test.com',
+    //       cart: {
+    //         items: []
+    //       }
+    //     });
+    //     user.save();
+    //   }
+    // });
     console.log("Mongodb Connected Succesfully")
     app.listen(3000);
   })
